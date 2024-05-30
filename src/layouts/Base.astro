@@ -1,0 +1,47 @@
+---
+import "mango-css/dist/mango.css";
+import { Icon } from "astro-icon/components";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <slot name="head" />
+	</head>
+	<body>
+		<header>
+			<a href="/">mango</a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/examples">Examples</a>
+					</li>
+					<li>
+						<a href="/docs">Docs</a>
+					</li>
+					<li role="separator"></li>
+					<li>
+						<a href="/">
+							<Icon name="radix-icons:github-logo" aria-hidden="true" />
+							<span class="sr-only">GitHub</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+    <slot />
+    <footer>Footer</footer>
+		<script>
+			import { Application } from "@hotwired/stimulus";
+			import { registerComponents } from "stimui";
+
+			document.addEventListener("DOMContentLoaded", () => {
+				window.Stimulus = Application.start();
+				registerComponents(window.Stimulus);
+			});
+		</script>
+  </body>
+</html>

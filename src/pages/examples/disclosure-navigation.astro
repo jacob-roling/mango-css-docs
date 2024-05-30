@@ -1,0 +1,47 @@
+---
+import Base from "#layouts/Base.astro"
+---
+<Base>
+  <main id="main">
+    <h1 id="disclosre-navigation">Disclosure Navigation</h1>
+    <h2>Demo</h2>
+    <article aria-labelledby="disclosre-navigation">
+      <header>
+        <div>Mythical University</div>
+        <p>Using a disclosure pattern for navigation</p>
+      </header>
+      <nav>
+        <details data-controller="tooltip">
+          <summary>About</summary>
+          <ul data-tooltip-target="tooltip">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Administration</a></li>
+            <li><a href="#">Facts</a></li>
+            <li><a href="#">Campus Tour</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Admissions</summary>
+          <ul>
+            <li><a href="#">Apply</a></li>
+            <li><a href="#">Tuition</a></li>
+            <li><a href="#">Signup</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Academics</summary>
+          <ul>
+            <li><a href="#">Colleges and Schools</a></li>
+            <li><a href="#">Tuition</a></li>
+            <li><a href="#">Signup</a></li>
+          </ul>
+        </details>
+      </nav>
+      <footer>
+        <p>
+          <i>Mythical University footer information</i>
+        </p>
+      </footer>
+    </article>
+  </main>
+</Base>
